@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
 import sys, getopt, os
-from YouTubeConfiguration import YouTubeConfiguration
-from YouTubeDownloader import YouTubeDownloader
+
+from youtubedownloader.YouTubeConfiguration import YouTubeConfiguration
+from youtubedownloader.YouTubeDownloader import YouTubeDownloader
 
 def usage(message_text, exit_code=1):
   sys.exit(exit_code)

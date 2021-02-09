@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 
-from pytube import YouTube, Playlist
-from YouTubeConfiguration import YouTubeConfiguration
 import os, sys
+
+from pytube import YouTube, Playlist
+
+from youtubedownloader.YouTubeConfiguration import YouTubeConfiguration
 
 class YouTubeDownloaderException(Exception):
   pass
@@ -24,9 +26,6 @@ class YouTubeDownloader:
   Class that performs download.
   '''
 
-  def ___init___(self):
-    self._youtube_config = None # YouTubeConfiguration class.
-
   def __init__(self, configuration):
     if not isinstance(configuration, YouTubeConfiguration):
       raise WrongConfigurationClassException()
@@ -39,7 +38,6 @@ class YouTubeDownloader:
     if (not isinstance(self._youtube_config.link, str)) or self._youtube_config.link is None:
       raise LinkIsNotAStringException()
     if (not isinstance(self._youtube_config.directory, str)) or self._youtube_config.directory is None:
-      print(self._youtube_config.directory)
       raise DirectoryIsNotAStringException()
     if (not os.path.exists(self._youtube_config.directory)):
       raise DirectoryDoesNotExist() 

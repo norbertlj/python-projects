@@ -1,10 +1,12 @@
-import setuptools
+import setuptools, sys, os
+
+sys.path.insert(0, os.path.abspath('src/'))
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="youtubedownloader-norbertlj",
+    name="youtubedownloader",
     version="0.0.1",
     author="Norbert L J",
     author_email="horazon88@gmail.com",
@@ -12,7 +14,8 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/norbertlj/python-projects/youtubedownloader",
-    packages=setuptools.find_packages(),
+    package_dir={'': 'src'},
+    packages=setuptools.find_packages('src'),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
